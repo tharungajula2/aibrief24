@@ -1,0 +1,39 @@
+---
+title: 1.1 Google's Prompt Engineering White Paper
+date: 2025-05-11
+tags: [prompt, google, prompt engineering]
+---
+
+> *Google quietly released a 30‑page white paper on prompt techniques.  
+> Below is the one‑page crib‑sheet + direct PDF link.*
+
+[📄 Read the full PDF](https://www.gptaiflow.tech/assets/files/2025-01-18-pdf-1-TechAI-Goolge-whitepaper_Prompt%20Engineering_v4-af36dcc7a49bb7269a58b1c9b89a8ae1.pdf)
+
+---
+
+## Key Techniques Toolbox
+
+<ol className="list-decimal ml-6 space-y-1">
+  <li>**Zero‑shot / General** — simple instruction.</li>
+  <li>**One‑shot / Few‑shot** — add examples to teach style.</li>
+  <li>**System • Role • Context** — set persona / task / background.</li>
+  <li>**Step‑Back (Two‑Step)** — ask a broad “why/what” first, feed answer into real task.</li>
+  <li>**Chain of Thought** — tell model to “think step‑by‑step” for reasoning.</li>
+  <li>**Self‑Consistency** — sample multiple CoT runs, vote on answer.</li>
+  <li>**Tree of Thoughts** — explore parallel reasoning branches for hard problems.</li>
+  <li>**ReAct (Reason + Act)** — interleave analysis with tool calls / searches.</li>
+  <li>**APE** — automatic prompt engineering; let the model draft & rank prompts.</li>
+  <li>**Code prompts** — ask to write, explain, translate, debug code.</li>
+  <li>**Multimodal** — mix images/audio/text when the model supports it.</li>
+</ol>
+
+---
+
+### Two‑Step “Step‑Back” Prompt  
+Use this template to prime the model before the real task:
+
+```text
+STEP 1 — “List 5 key principles for [topic].”
+STEP 2 — “Context: {principles}. Now [specific task] with those applied.”
+
+

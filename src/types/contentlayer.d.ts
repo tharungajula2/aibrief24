@@ -1,0 +1,1 @@
+// Types for MDX content are now defined in src/lib/mdx.ts 

@@ -30,7 +30,8 @@ export async function generateMetadata({ params }: { params: { year: string; mon
   };
 }
 
-export default async function PostPage({ params }: { params: { year: string; month: string; day: string; slug: string } }) {
+export default async function PostPage({ params }: any) {
+  // or:  { params }: { params: Record<string, string> }
   const post = await getPostBySlug(params.year, params.month, params.day, params.slug);
 
   if (!post) {

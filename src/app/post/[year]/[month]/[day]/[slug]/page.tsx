@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getAllPosts, mdxComponents, compileMDXContent } from '@/lib/mdx';
+import { getPostBySlug, getAllPosts, mdxComponents } from '@/lib/mdx';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export async function generateStaticParams() {
@@ -14,8 +14,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { year: string; month: string; day: string; slug: string } }) {
-  const post = await getPostBySlug(params.year, params.month, params.day, params.slug);
+/* ---------- metadata ---------- */
+export async function generateMetadata({ params }: any) {
+  const post = await getPostBySlug(
+    params.year,
+    params.month,
+    params.day,
+    params.slug
+  );
 
   if (!post) {
     return {
